@@ -1,0 +1,127 @@
+.habit-card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-left: 4px solid transparent;
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.habit-card:hover {
+  transform: translateY(-1px);
+}
+
+.habit-card.completed {
+  border-left-color: var(--habit-color, var(--color-success));
+  background: var(--color-success-bg);
+}
+
+.habit-toggle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2.5px solid var(--color-border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition), background var(--transition);
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.habit-toggle:hover {
+  border-color: var(--habit-color, var(--color-success));
+}
+
+.habit-card.completed .habit-toggle {
+  background: var(--habit-color, var(--color-success));
+  border-color: var(--habit-color, var(--color-success));
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.habit-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.habit-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.habit-desc {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.habit-stats {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.badge-streak {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge-total {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.badge-best {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.habit-delete {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color var(--transition), background var(--transition);
+}
+
+.habit-delete:hover {
+  color: var(--color-danger);
+  background: #fee2e2;
+}
+
+@media (max-width: 520px) {
+  .badge-best,
+  .badge-total {
+    display: none;
+  }
+}
